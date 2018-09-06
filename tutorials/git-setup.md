@@ -161,4 +161,4 @@ To https://github.com/jungkumseok/cpen400a-group-a.git
 
 The command line argument `origin` refers to the remote repository at Github. You can check the list of remote repositories by typing `git remote -v`.
 
-16. On a browser, navigate to your Github repository at https://github.com/jungkumseok/cpen400a-group-a to see the updated repository. The TA's will be looking at this repository to mark the assignments.
+16. On a browser, navigate to your Github repository at `https://github.com/jungkumseok/cpen400a-group-a` to see the updated repository. The TA's will be looking at this repository to mark the assignments.
