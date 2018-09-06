@@ -4,7 +4,7 @@ This repository contains all instructions and materials needed for the assignmen
 
 0. Before the assignments (Assignment 0)
     - [Setting up Git and your assignment repository](tutorials/git-setup.md)
-    - Setting up Node.js
+    - [Setting up Node.js](tutorials/node-setup.md)
 
 1. Assignment 1
 
