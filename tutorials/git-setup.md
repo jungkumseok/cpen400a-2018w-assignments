@@ -1,3 +1,5 @@
+[<< Back to Main](../../)
+
 # Setting up Git for the assignments
 
 To set up your assignment repository, you will **need a Github account** and also have **Git installed on your local machine**. If you have not done these, follow the instructions below, otherwise you can skip to the next section.
