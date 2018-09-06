@@ -6,7 +6,7 @@ To set up your assignment repository, you will **need a Github account** and als
 
 Go to [https://git-scm.com/downloads](https://git-scm.com/downloads) and download Git.
 
-## Setting Github
+## Setting up Github
 
 If you have not already, [create a Github account](https://github.com). You will need to **share your Github username with the TA** to get an invitation to your assignment repository.
 
@@ -27,7 +27,7 @@ This walk-through assumes you're working in a Unix environment - i.e. using `ls`
 ~/projects$ git clone https://github.com/jungkumseok/cpen400a-group-a.git
 ```
 
-3. The repository is now copied to your machine at `cpen400a-group-a.git`. Navigate into the directory to see the content.
+3. The repository is now copied to your machine at `~/projects/cpen400a-group-a`. Navigate into the directory to see the content.
 
 ```
 ~/projects$ cd cpen400a-group-a
