@@ -136,11 +136,13 @@ Changes to be committed:
 13. Commit the "staged" changes to the branch using the `git commit` command.
 
 ```
-~/projects/cpen400a-group-a$ git commit -a -m "my first commit"
+~/projects/cpen400a-group-a$ git commit -m "my first commit"
 [assignment-0 e4bea89] my first commit
  1 file changed, 1 insertion(+)
  create mode 100644 README.md
 ```
+
+The command line argument `-m` means the following argument (`"my first commit"`) will be the commit message you would like to include in the commit. If you omit this flag, the commit process will be interactive.
 
 14. Type `git log` to verify that your commit was successful. The output on terminal should show 2 commits, with the latest commit on top.
 
