@@ -12,10 +12,12 @@ Go to [https://nodejs.org/en/download](https://nodejs.org/en/download) and downl
 
 Try a quick Hello World example to check that Node.js installed properly.
 
-* `hello-world.js`
+
+Content of file `hello-world.js`:
 ```
 console.log("Hello World!");
 ```
+
 
 Create a JavaScript file `hello-world.js` as shown above, then run it with Node.js
 ```
