@@ -75,7 +75,9 @@ To help you get started, you will need to structure your project like the follow
 ```
 You will see a red button on the top-right corner of your web page. Click it to test your code.
 
-Note that you do not need to setup any server to host the webpage you are creating. Simply open the html pape with any browser, the webpage will be displayed.
+* Note that you do not need to setup any server to host the webpage you are creating. Simply open the html pape with any browser, the webpage will be displayed.
+
+* The marks and feedback you get from the test script is for your debugging purposes. **Those marks are not used for grading.**
 
 
 ## Marking
