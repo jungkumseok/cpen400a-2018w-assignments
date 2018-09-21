@@ -38,10 +38,14 @@ For this assignment you will be implementing the "Shoping Cart" functionality. H
         * The first argument `container` is a DOM element *(not a query selector)*, and
         * The second argument `itemName` is the name of a product (e.g. `"Box"`)
         * The function should generate a single product box (HTML) corresponding to the product referred by `itemName`, then replace the contents of `container` with this new HTML.
-        * The product box should have "Add to Cart" and "Remove from Cart" buttons, in addition to the features you hard-coded in assignment 1.
-        * You need to show the cart symbol on top of the product image. The user should still be able to see the product in the background.
+        * In addition to the features you hard-coded in assignment 1, the product box should also:
+            * contain an "Add to Cart" button with CSS class `btn-add`
+            * contain a "Remove from Cart" button with CSS class `btn-remove`
+            * show the cart symbol on top of the product image. The user should still be able to see the product in the background.
 
         ![product.png](./product.png?raw=true "Add to Cart, Remove from Cart")
+
+        * Don't forget to assign the CSS class `.product` to the generated box
 
     * B) `renderProductList(container)` (2 Points)
         * The first argument `container` is a DOM element *(not a query selector)*
