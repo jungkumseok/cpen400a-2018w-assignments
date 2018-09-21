@@ -63,7 +63,7 @@ To help you get started, you will need to structure your project like the follow
 
 3. [CSS] You need to add some interactivity to the website using pure css (no javascript is required for these tasks, so *please do not use JavaScript*)
     * A) When you hover over any of the items in the navigation menu, the **text and background color should be changed**. As soon as you move the mouse pointer away, the color should be restored back to the original color.
-    * B) When you hover over any of the product, the **background color around the product should change, and the price should become visible on top of the product image**. As soon as you take the mouse pointer away, the price and the gray background should disappear.
+    * B) When you hover over any of the product, the **background color around the product should change, and the price should become visible on top of the product image**. As soon as you take the mouse pointer away, the price should disappear and the background should revert to its original color.
 
 
 ## Testing
