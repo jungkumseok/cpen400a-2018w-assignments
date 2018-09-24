@@ -6,7 +6,7 @@ This assignment builds on the work you have done for [Assignment 1](./assignment
 
 For this assignment you will be implementing the "Shoping Cart" functionality. Here is a high-level overview of what you will be doing:
 
-* Create a "Store" object to keep track of the state of the application
+* Create a "Store" object to keep track of the application's state
 * Dynamically generate the UI for products, instead of hard-coding into HTML
 * Create "Add to Cart", "Remove from Cart" buttons
 
@@ -100,10 +100,8 @@ Watch out for the alert messages which tell you any missing components/functiona
 
 ## Marking
 
-There are 7 tasks for this assignment:
-* Task 1:
-  * A: 1 Point
-  * B: 1 Point
+There are 7 tasks for this assignment (Total 15 Points):
+* Task 1: 2 Points
 * Task 2: 1 Point
 * Task 3: 1 Point
 * Task 4:
