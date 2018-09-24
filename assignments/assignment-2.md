@@ -37,20 +37,21 @@ For this assignment you will be implementing the "Shoping Cart" functionality. H
     * A) `renderProduct(container, itemName)` (5 Points)
         * The first argument `container` is a DOM element *(not a query selector)*, and
         * The second argument `itemName` is the name of a product (e.g. `"Box"`)
-        * The function should generate a single product box (HTML) corresponding to the product referred by `itemName`, then replace the contents of `container` with this new HTML.
-        * In addition to the features you hard-coded in assignment 1, the product box should also:
-            * contain an "Add to Cart" button with CSS class `btn-add`
-            * contain a "Remove from Cart" button with CSS class `btn-remove`
-            * show the cart symbol on top of the product image. The user should still be able to see the product in the background.
+        * The function should generate a single product box (HTML) for the product identified by `itemName`, then **replace the contents of `container` with this new HTML**.
+        * In addition to the features you hard-coded in assignment 1, the product box should also display the following when the mouse pointer is over it:
+            * "Add to Cart" button with CSS class `btn-add`
+            * When clicked, "Add to Cart" button should trigger `addItemToCart(itemName)` method of the store instance.
+            * "Remove from Cart" button with CSS class `btn-remove`
+            * When clicked, "Remove from Cart" button should trigger `removeItemFromCart(itemName)` method of the store instance.
+            * Cart symbol on top of the product image. The user should still be able to see the product in the background.
 
         ![product.png](./product.png?raw=true "Add to Cart, Remove from Cart")
-
-        * Don't forget to assign the CSS class `.product` to the generated box
 
     * B) `renderProductList(container)` (2 Points)
         * The first argument `container` is a DOM element *(not a query selector)*
         * The function should generate the product list (HTML) you hard-coded in assignment 1, and then replace the contents of `container` with this new HTML.
         * Use the `renderProduct` function you created in Task 4A to generate the individual product boxes.
+        * Don't forget to assign the CSS class `.product` to the individual product boxes.
 
 5. [JS] Remove the hard-coded product list from assignment 1 and in its place put a placeholder DIV with id `productView`. Then somewhere in your code, invoke `renderProductList` method of the `store` object (from Task 3) to populate this DIV. (1 Point)
 
