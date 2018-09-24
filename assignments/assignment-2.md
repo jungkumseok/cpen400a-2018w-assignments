@@ -10,14 +10,30 @@ For this assignment you will be implementing the "Shoping Cart" functionality. H
 * Dynamically generate the UI for products, instead of hard-coding into HTML
 * Create "Add to Cart", "Remove from Cart" buttons
 
+
+## Directory Structure
+
+Same as assignment 1, except this time it will include a JavaScript file that describes your application.
+
+```
+/css/
+/js/
+    /app.js
+/images/
+/index.html
+```
+
+In the above example `app.js` will have all your JavaScript code. You should include this in your `index.html` as a `<script>` tag.
+
+
 ## Tasks
 
-1. [JS] Define a constructor function with the signature `function Store(initialStock)`, which will be used to instantiate a `Store` object. *Although we do tolerate the use of ES6 for the assignments, for this Task **do not use the ES6 `class`***. This `Store` object will keep track of the items in the store and the items in the cart.
+1. [JS] Define a constructor function with the signature `function Store(initialStock)`, which will be used to instantiate a `Store` object. This `Store` object will keep track of the items in the store and the items in the cart. *Although we do tolerate the use of ES6 for the assignments, for this Task **do not use the ES6 `class`***.
     * A) The constructor function should initialize the following properties (1 Point):
         * `"stock"` - initialize it with `initialStock` passed as the argument to the constructor
         * `"cart"` - initialize it with an empty object (i.e. associative array)
         * `"onUpdate"` - initialize it with `null`
-    * B) Define the following methods for `Store` (i.e. a prototype function) - You don't need to implement the function body yet; you will do that in Task 4 (1 Point):
+    * B) Define the following methods for `Store` (i.e. prototype functions) - You don't need to implement the function body yet; you will do that in Task 4 (1 Point):
         * `addItemToCart(itemName)`
         * `removeItemFromCart(itemName)`
         * `renderProduct(container, itemName)`
@@ -36,33 +52,33 @@ For this assignment you will be implementing the "Shoping Cart" functionality. H
 4. [JS+HTML+CSS] Implement the following methods of `Store`:
     * A) `renderProduct(container, itemName)` (5 Points)
         * The first argument `container` is a DOM element *(not a query selector)*, and
-        * The second argument `itemName` is the name of a product (e.g. `"Box"`)
+        * The second argument `itemName` is the name of a product (e.g. `"Box1"`)
         * The function should generate a single product box (HTML) for the product identified by `itemName`, then **replace the contents of `container` with this new HTML**.
         * In addition to the features you hard-coded in assignment 1, the product box should also display the following when the mouse pointer is over it:
             * "Add to Cart" button with CSS class `btn-add`
             * When clicked, "Add to Cart" button should trigger `addItemToCart(itemName)` method of the store instance.
             * "Remove from Cart" button with CSS class `btn-remove`
             * When clicked, "Remove from Cart" button should trigger `removeItemFromCart(itemName)` method of the store instance.
-            * Cart symbol on top of the product image. The user should still be able to see the product in the background.
+            * Cart symbol on top of the product image. The user should still be able to see the product in the background. You can use your own cart image or [this image](./cart.png) provided for you.
 
         ![product.png](./product.png?raw=true "Add to Cart, Remove from Cart")
 
     * B) `renderProductList(container)` (2 Points)
         * The first argument `container` is a DOM element *(not a query selector)*
-        * The function should generate the product list (HTML) you hard-coded in assignment 1, and then replace the contents of `container` with this new HTML.
+        * The function should generate the product list (HTML) you hard-coded in assignment 1, and then **replace the contents of `container` with this new HTML.**
         * Use the `renderProduct` function you created in Task 4A to generate the individual product boxes.
         * Don't forget to assign the CSS class `.product` to the individual product boxes.
 
-5. [JS] Remove the hard-coded product list from assignment 1 and in its place put a placeholder DIV with id `productView`. Then somewhere in your code, invoke `renderProductList` method of the `store` object (from Task 3) to populate this DIV. (1 Point)
+5. [JS] Remove the hard-coded product list (i.e. ul#productList) from assignment 1 and in its place put a placeholder `<div>` with id `productView`. Then somewhere in your code, invoke `renderProductList` method of the `store` object (from Task 3) to populate this DIV. (1 Point)
 
 6. [JS] Implement the following methods of `Store`:
-    * A) `addItemToCart(itemName)` - this function should accept a string argument `itemName`. If the cart object has a value corresponding to this key, increment it. If not, set it to 1. Decrement the quantity in the stock accordingly. Handle cases where the stock does not have the item anymore. After the stock and the cart are updated, invoke the function assigned to the `onUpdate` property of the store instance (you will assign this function in Task 7). (1 Point)
+    * A) `addItemToCart(itemName)` - this function should accept a string argument `itemName`. If the cart object already has a value corresponding to this key, increment it. If not, set it to 1. Decrement the quantity in the stock accordingly. Handle cases where the stock does not have the item anymore. After the stock and the cart are updated, invoke the function assigned to the `onUpdate` property of the store instance (you will assign this function in Task 7). (1 Point)
     * B) `removeItemFromCart(itemName)` - this function should accept a string argument `itemName`. If the cart object has a value corresponding to this key, decrement it. If the quantity in the cart becomes 0, delete the entry in the cart. After the stock and the cart are updated, invoke the function assigned to the `onUpdate` property of the store instance (you will assign this function in Task 7). (1 Point)
 
-7. [JS] Finally, assign a function with no arguments to the `onUpdate` property of the `store` object. This function is invoked every time `store`'s state is updated (as you have implemented in Task 6). In this function, call `renderProductList` with the appropriate container object. The high-level idea here is that any time an item is added to or removed from cart, you will update the html. (1 Point)
+7. [JS] Finally, assign a function with no arguments to the `onUpdate` property of the `store` object. This function is invoked every time `store`'s state is updated (as you have implemented in Task 6). In this function, call `renderProductList` with the appropriate container object. The high-level idea here is that any time an item is added to or removed from cart (state of the model is changed), you will update the html (change the view). (1 Point)
 
 
-Bonus. [JS+HTML] Implement a function with the signature `showCart(cart)`, which invokes an alert to display the contents of the given cart. Then create a "Show Cart" button somewhere in your HTML, which, when clicked, will invoke the `showCart` function with the appropriate cart object. (1 Point)
+* Bonus. [JS+HTML] Implement a function with the signature `showCart(cart)`, which **invokes an `alert` to display the contents of the given cart object** as shown below. Then create a "Show Cart" button somewhere in your HTML, which, when clicked, will invoke the `showCart` function with the appropriate cart object. (1 Point)
 
 ```
 Box1 : 3
