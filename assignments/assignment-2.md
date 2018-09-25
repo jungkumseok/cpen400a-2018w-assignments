@@ -63,7 +63,7 @@ Jeans : 1
 Keyboard : 2
 ```
 
-7. (3 Points) [JS] Create a **global variable** named `inactiveTime` and initialize it to `0`. Then implement an "Inactivity Tracker" feature using `setInterval` or `setTimeout`. Use the global `inactiveTime` variable to keep track of how much time has elapsed. If the user does not perform any action (adding item to cart/removing item from cart) within **30 seconds** since the last time an action was performed, an `alert` should be displayed with a message (e.g. "Hey there! Are you still planning to buy something?"). Clicking OK on the alert should reset the timer. At any point, if the user performs an action, the timer should be reset as well.
+7. (3 Points) [JS] Create a **global variable** named `inactiveTime` and initialize it to `0`. Then implement an "Inactivity Tracker" feature using `setInterval` or `setTimeout`. Use the global `inactiveTime` variable to keep track of how much time has elapsed. If the user does not perform any action (adding item to cart, removing item from cart, viewing cart) within **30 seconds** since the last time an action was performed, an `alert` should be displayed with a message (e.g. "Hey there! Are you still planning to buy something?"). Clicking OK on the alert should reset the timer. At any point, if the user performs an action, the timer should be reset as well.
 
 
 ## Testing
@@ -106,7 +106,7 @@ There are 7 tasks for this assignment (Total 15 Points):
 
 These deadlines will be strictly enforced; we won't be looking at any commits done after this time-stamp.
 
-* L1A & L1B - Monday, October 8, 2018 23:59:59 PST
+* L1A & L1B - Tuesday, October 9, 2018 23:59:59 PST
 
 
 ## Labs are mandatory on the week of assignment submission:
