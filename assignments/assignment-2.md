@@ -48,12 +48,12 @@ In the above example `app.js` will have all your JavaScript code. You should inc
 3. (1 Point) [JS] Create a **global variable** named `store` and then assign a new instance of `Store` you defined in Task 1. Use the `product` object created in Task 2 as the argument.
 
 4. (2 Points) [HTML] For each product box, create "Add to Cart" and "Remove from Cart" buttons that are shown when the mouse pointer is over it:
-    * A) Use `btn-add` as the class name for the "Add to Cart" button. When clicked, this button should invoke `addItemToCart` method of the `store` object you instantiated in Task 3, using the appropraite item name as the argument.
-    * B) Use `btn-remove` as the class name for the "Remove from Cart" button. When clicked, this button should invoke `removeItemFromCart` method of the `store` object you instantiated in Task 3, using the appropraite item name as the argument.
+    * A) Use `btn-add` as the class name for the "Add to Cart" button. When clicked, this button should invoke `addItemToCart` method of the `store` object you instantiated in Task 3, using the appropriate item name as the argument.
+    * B) Use `btn-remove` as the class name for the "Remove from Cart" button. When clicked, this button should invoke `removeItemFromCart` method of the `store` object you instantiated in Task 3, using the appropriate item name as the argument.
 
 5. (4 Points) [JS] Implement the following methods of `Store`:
     * A) `addItemToCart(itemName)` - this function should accept a string argument `itemName`. If the cart object already has a value corresponding to this key, increment it. If not, set it to 1. Decrement the quantity in the stock accordingly. Handle cases where the stock does not have the item anymore.
-    * B) `removeItemFromCart(itemName)` - this function should accept a string argument `itemName`. If the cart object has a value corresponding to this key, decrement it. If the quantity in the cart becomes 0, delete the entry in the cart.
+    * B) `removeItemFromCart(itemName)` - this function should accept a string argument `itemName`. If the cart object has a value corresponding to this key, decrement it. Increment the quantity in the stock accordingly. If the quantity in the cart becomes 0, delete the entry in the cart.
 
 6. (2 Points) [JS+HTML] Implement a function with the signature `showCart(cart)`, which **invokes an `alert` to display the contents of the given cart object** as shown below in the example. Then create a "Show Cart" button with id=`btn-show-cart` somewhere in your HTML, which, when clicked, will invoke the `showCart` function with the appropriate cart object.
 
