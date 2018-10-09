@@ -6,7 +6,7 @@ This assignment builds on the work you have done for [Assignment 2](./assignment
 
 In this assignment you will be focusing on making your application more dynamic. Here is a high-level overview of what you will be doing:
 
-* Dynamically generate the product list HTML
+* Dynamically generate the product list
 * Dynamically generate the shopping cart modal
 
 
@@ -30,13 +30,13 @@ Before you begin, you can set the inactivity timeout to 30 minutes or longer so 
         * The second argument `storeInstance` is an instance of `Store`.
         * The function should generate the product list (DOM element), which so far you had hard-coded in the HTML, and then **replace the contents of `container` with this new DOM element.**
         * Use the `renderProduct` function you created in Task 1A to generate the individual product boxes.
-        * On the `container` element **that you pass to `renderProduct`**, assign the id `product-<itemName>` where `<itemName>` is the name of each product (e.g. `"Box1"`). *You will need this id later.*
+        * On the element **that you pass to `renderProduct`** as the first argument, assign the id `product-<itemName>` where `<itemName>` is the name of each product (e.g. `"Box1"`). *You will need this id later.*
 
-2. (1 Point) [JS] Remove the hard-coded product list (i.e. #productList) from `index.html` and in its place put a placeholder `<div>` with id `productView`. Then invoke `renderProductList` function with the appropriate arguments to populate this `<div>` element.
+2. (1 Point) [JS+HTML] Remove the hard-coded product list (i.e. #productList) from `index.html` and in its place put a placeholder `<div>` with id `productView`. Then invoke `renderProductList` function with the appropriate arguments to populate this `<div>` element.
 
 3. (2 Points) [JS] If you have completed Task 1 and 2, the product list should now render when you load the page. However, when you add an item to the cart, the "Remove from Cart" button does not show because we are not updating the HTML when our cart object is modified. In this task, you will use a *callback function* to set up a mechanism to re-render the view whenever the application's state is updated.
     * Add a new property `onUpdate` in the `Store` constructor function and initialize it to `null`
-    * The `onUpdate` property will later be assigned a function with a single argument. In `addItemToCart` and `removeItemFromCart` methods, call `this.onUpdate` function whenever cart or stock is updated, passing in `itemName` as the argument.
+    * The `onUpdate` property will later be assigned a function that takes a single argument. In `addItemToCart` and `removeItemFromCart` methods, call `this.onUpdate` function whenever cart or stock is updated, passing in `itemName` as the argument.
     * After the `store` object is instantiated, assign to its `onUpdate` property a function with the signature `function(itemName)`.
         * The first argument `itemName` is the name of a product (e.g. `"Box1"`)
         * This function should call `renderProduct` function with the appropriate arguments. (Hint: use the ids you assigned in Task 1.B)
@@ -45,7 +45,8 @@ Before you begin, you can set the inactivity timeout to 30 minutes or longer so 
 4. (4 Points) [JS] You will be upgrading the "show cart" functionality to display a modal window instead of an alert. First, define and implement the function with signature `renderCart(container, storeInstance)`:
     * The first argument `container` is a DOM element *(not a CSS selector string)*
     * The second argument `storeInstance` is an instance of `Store`.
-    * The function should generate a table (does not need to be specifically a `<table>` element, we just mean "tabular representation") displaying the contents of the cart including the quantity of each item and the total price, and then **replace the contents of `container` with this new DOM element.** It should also have "+" and "-" buttons for each item, which can be clicked to increment/decrement the quantity. You should invoke the same `addItemToCart` and `removeItemFromCart` methods.
+    * The function should generate a table (does not need to be specifically a `<table>` element, we just mean "tabular representation") displaying the contents of the cart including the quantity of each item and the total price, and then **replace the contents of `container` with this new DOM element.**
+    * The table should also have "+" and "-" `<button>`s for each item, which can be clicked to increment/decrement the quantity. You should invoke the same `addItemToCart` and `removeItemFromCart` methods.
 
 5. (3 Points) [JS+HTML+CSS] You will use the `renderCart` function from Task 4 to complete the "show cart" functionality.
     * In your HTML, place the following elements:
@@ -58,10 +59,10 @@ Before you begin, you can set the inactivity timeout to 30 minutes or longer so 
         * Use `renderCart` to update `div#modal-content`
     * Write a `hideCart` function and invoke it when `button#btn-hide-cart` is clicked. The function should:
         * Make `div#modal` invisible
-    * Finally, to automatically re-render the cart content, modify the `onUpdate` callback function you assigned in Task 3C to also invoke `renderCart` function with the appropriate arguments.
+    * Finally, to automatically re-render the cart content, invoke `renderCart` function with the appropriate arguments in the `onUpdate` function you defined in Task 3.
 
 
-6. (Bonus 1 point) When the cart modal is open, and if the user presses **esc**, you need to hide the modal.
+6. (Bonus 1 point) Hide the cart modal when the user presses **esc** key.
 
 
 ## Testing
