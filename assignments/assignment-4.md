@@ -52,14 +52,14 @@ To help you get started, here is [some reference to the XMLHttpRequest API](http
     * The first argument `onSync` is a function that is called after the `Store` instance has successfully synchronized its `stock` with the server.
     * Using the `ajaxGet` function you wrote above, make a request to the server. The URL to use is the value of `serverUrl` property plus `"/products"`.
     * The response returned from the server has the same structure as `products` variable we've been using so far. Upon succesfully receiving a response, compute a "delta" object with the following structure (the "delta" object tells us about what has been changed since the last time we synchronized. The example below corresponds to the case where the price of `Box1` changed from `10` to `5` and the quantity from `5` to `8`):
-```
-var delta = {
-    'Box1': {
-        price: -5,
-        quantity: 3
+    ```
+    var delta = {
+        'Box1': {
+            price: -5,
+            quantity: 3
+        }
     }
-}
-```
+    ```
     * Once you've computed the "delta" object, update the `stock` property with the object fetched from the server. After that, invoke the store instance's `onUpdate` function with no arguments to trigger re-rendering of the view.
     * If `onSync` argument was provided, call it and pass in the "delta" object as the argument.
     * After you have initialized the `store` variable, call `syncWithServer` with no arguments.
