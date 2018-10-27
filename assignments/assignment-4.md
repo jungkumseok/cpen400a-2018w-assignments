@@ -60,9 +60,9 @@ To help you get started, here is [some reference to the XMLHttpRequest API](http
         }
     }
     ```
-    * Once you've computed the "delta" object, update the `stock` property with the object fetched from the server. After that, invoke the store instance's `onUpdate` function with no arguments to trigger re-rendering of the view.
+    * Once you've computed the "delta" object, update the `stock` property using the object fetched from the server. You will need to pay close attention when updating the quantity of items (if some items are currently in the cart, can you simply replace the `stock` with the new stock object?). After that, invoke the store instance's `onUpdate` function with no arguments to trigger re-rendering of the view.
     * If `onSync` argument was provided, call it and pass in the "delta" object as the argument.
-    * After you have initialized the `store` variable, call `syncWithServer` with no arguments.
+    * Finally, after you have initialized the `store` variable, call this `syncWithServer` method with no arguments.
 
 4. (4 Points) [JS] You will implement the first part of the check-out routine in this assignment; the rest of the check-out procedure will be completed in the next assignment.
     * A) Create a "Check Out" button with id `btn-check-out` in your cart modal. Bind a click event listener that does the following:
