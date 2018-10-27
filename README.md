@@ -9,5 +9,6 @@ This repository contains all instructions and materials needed for the assignmen
 1. [Assignment 1](assignments/assignment-1.md)
 2. [Assignment 2](assignments/assignment-2.md)
 3. [Assignment 3](assignments/assignment-3.md)
+4. [Assignment 4](assignments/assignment-4.md)
 
 Assignment 0 (Git setup) will not be graded, but knowing how to set up your Git repository is crucial for all the subsequent submissions, as your assignment will not be accepted if not submitted properly to Github.
