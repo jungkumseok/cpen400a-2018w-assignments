@@ -48,10 +48,10 @@ ajaxGet("https://cpen400a-bookstore.herokuapp.com/products",
 
 To help you get started, here is [some reference to the XMLHttpRequest API](https://www.w3schools.com/xml/xml_http.asp).
 
-3. [JS] Define a method for `Store` with the following signature: `syncWithServer(onSync)`
+3. (4 Points) [JS] Define a method for `Store` with the following signature: `syncWithServer(onSync)`
     * The first argument `onSync` is a function that is called after the `Store` instance has successfully synchronized its `stock` with the server.
     * Using the `ajaxGet` function you wrote above, make a request to the server. The URL to use is the value of `serverUrl` property plus `"/products"`.
-    * The response returned from the server has the same structure as `products` variable we've been using so far. Upon succesfully receiving a response, compute a "delta" object with the following structure:
+    * The response returned from the server has the same structure as `products` variable we've been using so far. Upon succesfully receiving a response, compute a "delta" object with the following structure (the "delta" object tells us about what has been changed since the last time we synchronized. The example below corresponds to the case where the price of `Box1` changed from `10` to `5` and the quantity from `5` to `8`):
 ```
 var delta = {
     'Box1': {
@@ -60,12 +60,11 @@ var delta = {
     }
 }
 ```
-    The "delta" object tells us about what has been changed since the last time we synchronized. The example above corresponds to the case where the price of `Box1` changed from `10` to `5` and the quantity from `5` to `8`.
     * Once you've computed the "delta" object, update the `stock` property with the object fetched from the server. After that, invoke the store instance's `onUpdate` function with no arguments to trigger re-rendering of the view.
     * If `onSync` argument was provided, call it and pass in the "delta" object as the argument.
     * After you have initialized the `store` variable, call `syncWithServer` with no arguments.
 
-4. [JS] You will implement the first part of the check-out routine in this assignment; the rest of the check-out procedure will be completed in the next assignment.
+4. (4 Points) [JS] You will implement the first part of the check-out routine in this assignment; the rest of the check-out procedure will be completed in the next assignment.
     * A) Create a "Check Out" button with id `btn-check-out` in your cart modal. Bind a click event listener that does the following:
         * First, disable the button to prevent multiple clicks.
         * Then call `storeInstance.checkOut`, passing in a callback function.
@@ -96,15 +95,13 @@ Watch out for the alert messages which tell you any missing components/functiona
 
 ## Marking
 
-There are 5 tasks + 1 bonus task for this assignment (Total 15 Points):
-* Task 1:
-  * A: 4 Points
-  * B: 1 Point
-* Task 2: 1 Point
-* Task 3: 2 Points
-* Task 4: 4 Points
-* Task 5: 3 Points
-* Bonus Task 6: 1 Point
+There are 4 tasks for this assignment (Total 15 Points):
+* Task 1: 2 Points
+* Task 2: 5 Points
+* Task 3: 4 Points
+* Task 4:
+  * A: 1 Points
+  * B: 3 Point
 
 **Bonus mark does not carry over to the next assignment - it is used only to make up for marks lost in this assignment**
 
