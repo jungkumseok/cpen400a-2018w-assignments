@@ -15,6 +15,8 @@ In this assignment you will focus on interacting with a remote server. Here is a
 The following URLs can be used for this assignment:
 * `https://cpen400a-bookstore.herokuapp.com/products` - returns object containing all the products
 * `https://cpen400a-bookstore.herokuapp.com/products/<itemName>` - returns a single product identified by `<itemName>` 
+* `https://cpen400a-bookstore.herokuapp.com/test/reliable` - the reliable version of `/products` endpoint
+* `https://cpen400a-bookstore.herokuapp.com/test/error` - this endpoint always returns error
 
 1. (2 Points) [JS] First we will make some minor modifications to prepare for integration with server-side logic:
     * Remove the `products` variable as we no longer need it.
@@ -64,7 +66,7 @@ To help you get started, here is [some reference to the XMLHttpRequest API](http
     * If `onSync` argument was provided, call it and pass in the "delta" object as the argument.
     * Finally, after you have initialized the `store` variable, call this `syncWithServer` method with no arguments.
 
-4. (4 Points) [JS] You will implement the first part of the check-out routine in this assignment; the rest of the check-out procedure will be completed in the next assignment.
+4. (4 Points) [JS] You will implement the first part of the check-out routine in this task; the rest of the check-out procedure will be completed in the next assignment.
     * A) Create a "Check Out" button with id `btn-check-out` in your cart modal. Bind a click event listener that does the following:
         * First, disable the button to prevent multiple clicks.
         * Then call `storeInstance.checkOut`, passing in a callback function.
