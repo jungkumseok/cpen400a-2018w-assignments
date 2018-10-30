@@ -105,8 +105,6 @@ There are 4 tasks for this assignment (Total 15 Points):
   * A: 1 Points
   * B: 3 Point
 
-**Bonus mark does not carry over to the next assignment - it is used only to make up for marks lost in this assignment**
-
 
 ## Submission instructions:
 
