@@ -104,7 +104,7 @@ There are 5 tasks + 1 bonus task for this assignment (Total 15 Points):
 
 These deadlines will be strictly enforced; we won't be looking at any commits done after this time-stamp.
 
-* L1A & L1B - Tuesday, October 29, 2018 23:59:59 PST
+* L1A & L1B - Monday, October 29, 2018 23:59:59 PST
 
 
 ## Labs are mandatory on the week of assignment submission:
