@@ -7,9 +7,7 @@ var MongoClient = require('mongodb').MongoClient;	// require the mongodb driver
  */
 function StoreDB(mongoUrl, dbName){
 	if (!(this instanceof StoreDB)) return new StoreDB(mongoUrl, dbName);
-	var self = this;
-
-	self.connected = new Promise(function(resolve, reject){
+	this.connected = new Promise(function(resolve, reject){
 		MongoClient.connect(
 			mongoUrl,
 			{
