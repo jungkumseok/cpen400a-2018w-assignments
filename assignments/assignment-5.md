@@ -72,6 +72,8 @@ Query = {
     category: String
 }
 ```
+For example, when we refer to a "`Product` object" in the instructions below, we mean an object with fields `"label"`, `"price"`, `"quantity"`,`"imageUrl"`,`"category"` as shown in the schema above. The field `"_id"` exists in the case of a MongoDB document.
+
 
 1. (2 Points) We will take a few small steps first to prepare for "full-stack" development.
     * A) **Reorganize your project directory** to include the server application. A [boilerplate](../server-boilerplate/) of the application has been provided for you and you're welcome to copy it and start from there (if you copied it before, take a look at it again as it's been updated). Your project directory should now have the following structure:
