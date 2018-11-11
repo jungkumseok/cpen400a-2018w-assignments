@@ -35,28 +35,28 @@ Product = {
     "category": String
 }
 
-productArray = [ product, product, product, ... ]
+ProductArray = [ Product, Product, Product, ... ]
 
 Products = {
-    product._id: {
-        "label": product.label,
-        "price": product.price,
-        "quantity": product.quantity,
-        "imageUrl": product.imageUrl,
+    Product._id: {
+        "label": Product.label,
+        "price": Product.price,
+        "quantity": Product.quantity,
+        "imageUrl": Product.imageUrl,
     },
-    product._id: {
-        "label": product.label,
+    Product._id: {
+        "label": Product.label,
         ... 
     },
-    product._id: {
-        "label": product.label,
+    Product._id: {
+        "label": Product.label,
         ... 
     },
     ...
 }
 
 Cart = {
-    product._id: Number
+    Product._id: Number
 }
 
 Order = {
@@ -80,8 +80,9 @@ Query = {
             /css/
             /js/
             /index.html
-        /package.json
         /index.js
+        /initdb.mongo
+        /package.json
         /StoreDB.js
         ```
         * When you're moving things within your project directory, **make sure you don't move the `.git` directory and `.gitignore` file**.
@@ -90,7 +91,7 @@ Query = {
         * You can now *remove* the `/images` directory as you will be fetching the images from a different server.
         * Once you've reorganized the directory, install the NPM dependencies mentioned above. You should see a `/node_modules` directory once you've installed them.
         * If everything is set up properly, you should now be able to serve your client-side application by typing `node index.js` (`index.js` is your server application). The server should bind to port 3000 and your client app should be accessible via a browser at [`http://localhost:3000`](http://localhost:3000).
-    * B) **Initialize the database using the script provided**. Start a Mongo Shell by typing `mongo`, then load the script by `load("initdb.mongo")`. It initializes two collections, `products` and `orders`, and it will populate your database with the product list. You can type `db.products.find()` to see if the products were entered properly. If you need to reset your database, simply repeat the `load` command.
+    * B) **Initialize the database using the [script provided](../server-boilerplate/initdb.mongo)**. Start a Mongo Shell by typing `mongo`, then load the script by `load("initdb.mongo")`. It initializes two collections, `products` and `orders`, and it will populate your database with the product list. You can type `db.products.find()` to see if the products were entered properly. If you need to reset your database, simply repeat the `load` command.
     
 2. (2 Points) [JS+HTML] To interact with the server, we will make some modifications in the client app. To help you focus on server-side development, we're providing you with some client-side functions that you can copy+paste into your application. You will need to set up the rest of your code to properly integrate the functions we're providing.
     * A) In `assignment-4` you initialized `store` with the URL `https://cpen400a-bookstore.herokuapp.com`. Change this URL and use the URL of your server instead.
@@ -102,7 +103,7 @@ Query = {
         * The second is a rendering function named `renderMenu` with the signature `function(container, storeInstance)`. It renders the product category menu and the price filters on the given DOM element.
     * F) To use the provided functions, replace the `#menu` element with a `div#menuView` in your HTML. This is where you will render the product category menu. In your JavaScript where you define `store.onUpdate` handler, add a call to `renderMenu`, passing in the appropriate arguments.
 
-3. (3 Points) [JS] We can use the `mongodb` library to interact with the database. However, the API provided by the module are quite low-level and we want to abstract out these details so we don't have to call the low-level methods all the time. In this task we will write a `StoreDB` object that will take care of the low-level operations. We have provided a [template for `StoreDB.js`](../server-boilerplate/StoreDB.js), which you will complete.
+3. (3 Points) [JS] We can use the `mongodb` library to interact with the database. However, the API provided by the module are quite low-level and we want to abstract out these details so we don't have to call the low-level methods all the time. In this task we will write a `StoreDB` object that will take care of the low-level operations. We have provided a [template for `StoreDB`](../server-boilerplate/StoreDB.js), which you will complete.
     * A) Complete the implementation for `StoreDB.prototype.getProducts`.
         * It should accept a single argument `queryParams`, which is a `Query` object.
         * It should find documents in the MongoDB `products` collection, filtered according to the `queryParams` object.
@@ -114,7 +115,7 @@ Query = {
     * B) `require` the module `StoreDB.js` in your server application (i.e. `index.js`). Then declare a variable `db`, assigning a `StoreDB` instance initialized with the appropriate arguments (look in `initdb.mongo` for the database name).
 
 4. (2 Points) [JS] In your server app, **create a HTTP `GET` endpoint `/products`** that returns the products in the database.
-    * Use the Express.js API to define a GET endpoint.
+    * Use the [Express.js API](https://expressjs.com/en/4x/api.html#app) to define a GET endpoint.
     * The handler for this endpoint should use `db.getProducts` to read a `Products` object.
     * The handler should pass a `Query` object (created from the query-string) as the argument into `db.getProducts` function.
     * If the database operation was successful, send the `Products` object as a JSON object.
