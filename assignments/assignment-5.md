@@ -143,7 +143,6 @@ ajaxPost("http://localhost:3000/checkout",
         // do something with the response
     },
     function(error){
-    // this function should be invoked only after all 3 retries have failed.
         // do something with the error
     }
 );
