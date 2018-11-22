@@ -56,7 +56,10 @@ Products = {
 }
 
 Cart = {
-    Product._id: Number
+    Product._id: Number,
+    Product._id: Number,
+    Product._id: Number,
+    ...
 }
 
 Order = {
