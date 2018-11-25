@@ -106,7 +106,7 @@ print(result);
 
 result = db.orders.insert([
 	{
-		client_id: 12345678,
+		client_id: '12345678',
 		cart: {
 			Box1: 2,
 			Box2: 1
